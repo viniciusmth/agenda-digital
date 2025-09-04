@@ -1,0 +1,20 @@
+services:
+  agenda-db:
+    image: postgres:latest
+    container_name: agenda-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+    - "5432:5432"
+    volumes:
+    - ./pgdata:/var/lib/postgresql/data
+  app:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 3000
+    container_name: agenda-app
+    ports:
+    - "3000:3000"    
+    depends_on:
+    - agenda-db
