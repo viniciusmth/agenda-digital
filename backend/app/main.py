@@ -17,7 +17,11 @@ app.add_middleware(
     allow_headers= ["*"]
 )
 
-@app.post("/")
+@app.get("/")
+def hello():
+    return {"Hello": "World"}
+
+@app.post("/create_user")
 async def create_user(user: ClientSchema, db: AsyncSession = Depends(get_db)):
     client = Client(
         name=user.name,
