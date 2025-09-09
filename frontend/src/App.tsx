@@ -1,7 +1,7 @@
 import React from 'react';
 const App: React.FC = () => {
   const getInfo = async () => {
-    const response = await fetch("http://agenda-digital.fly.dev/");
+    const response = await fetch("https://agenda-digital.fly.dev/");
     const data = await response.json();
     console.log(data);
   }
