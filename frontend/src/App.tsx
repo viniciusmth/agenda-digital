@@ -1,13 +1,11 @@
 import React from 'react';
 import Profile from '../components/Profile';
 import CardStats from '../components/CardStats';
-import { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import CardClient from '../components/CardClient';
 
 
 const App: React.FC = () => {
-  const [theme, setTheme] = useState("light");
 
   return (
   <div className="min-h-screen h-screen flex justify-center items-center py-15 px-30 gap-5 overflow-hidden">
