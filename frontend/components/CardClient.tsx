@@ -1,7 +1,6 @@
 import User from "../src/assets/iconUser";
-import { useAnimation } from "motion/react";
 import { useState } from "react";
-import { motion} from "framer-motion";
+import { motion, useAnimation, easeInOut } from "framer-motion";
 
 const CardClient: React.FC = () => {
     const [iconColor, setIconColor] = useState("#3B3B3B");
@@ -10,14 +9,14 @@ const CardClient: React.FC = () => {
     const titleControls = useAnimation();
 
     const infoVariables = {
-        "hidden": {y: -20, opacity: 0, transition:{ease: "linear", duration: 0.2}},
-        "visible": {y: 0, opacity: 1, transition:{delay:0.1, ease: "linear", duration: 0.2}},
-        "title": {y: -10, opacity: 1, transition:{ease: "linear", duration: 0.2}}
+        "hidden": {y: -20, opacity: 0, transition:{ease: easeInOut, duration: 0.2}},
+        "visible": {y: 0, opacity: 1, transition:{delay:0.1, ease: easeInOut, duration: 0.2}},
+        "title": {y: -10, opacity: 1, transition:{ease: easeInOut, duration: 0.2}}
     }
 
     const titleVariables = {
-        "up": {y: -20, opacity: 1, transition:{ease: "linear", duration: 0.2}},
-        "down": {y: 0, opacity: 1, transition:{delay:0.1, ease: "linear", duration: 0.2}}
+        "up": {y: -20, opacity: 1, transition:{ease: easeInOut, duration: 0.2}},
+        "down": {y: 0, opacity: 1, transition:{delay:0.1, ease: easeInOut, duration: 0.2}}
     }
 
     return (
